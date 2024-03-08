@@ -1,24 +1,24 @@
 " autoload/mysvgpreview.vim
 function! mysvgpreview#Preview()
-  let l:current_file = expand('%')
+  let l:current_file = expand('%:p')
   if l:current_file =~ '\.svg$'
-    if has('mac')
-      let l:opener = 'open'
+    " Determine the appropriate command based on the OS
+    if has('macunix')
+      let l:cmd = 'open'
     elseif has('unix')
-      " Most Linux distributions and possibly other Unix systems
-      let l:opener = 'xdg-open'
+      let l:cmd = 'xdg-open'
     elseif has('win32') || has('win64')
-      let l:opener = 'start'
+      let l:cmd = 'start'
     else
       echo "Unsupported OS."
       return
     endif
 
     " Check if the command exists
-    if executable(l:opener)
-      execute '!' . l:opener . ' ' . shellescape(l:current_file)
+    if executable(l:cmd)
+      execute '!' . l:cmd . ' ' . shellescape(l:current_file)
     else
-      echo "Command to open SVG files not found."
+      echo l:cmd . " command not found."
     endif
   else
     echo "Current file is not an SVG."
