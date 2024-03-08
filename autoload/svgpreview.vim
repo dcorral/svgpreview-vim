@@ -1,5 +1,5 @@
 " autoload/mysvgpreview.vim
-function! mysvgpreview#Preview()
+function! svgpreview#Preview()
   let l:current_file = expand('%:p')
   if l:current_file =~ '\.svg$'
     " Determine the appropriate command based on the OS

@@ -1,8 +1,8 @@
 " plugin/mysvgpreview.vim
-if exists("g:loaded_mysvgpreview")
+if exists("g:loaded_svgpreview")
   finish
 endif
-let g:loaded_mysvgpreview = 1
+let g:loaded_svgpreview = 1
 
-command! SVGPreview call mysvgpreview#Preview()
+command! SVGPreview call svgpreview#Preview()
 
