@@ -1,4 +1,3 @@
-" plugin/mysvgpreview.vim
 if exists("g:loaded_svgpreview")
   finish
 endif

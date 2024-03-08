@@ -1,4 +1,3 @@
-" autoload/mysvgpreview.vim
 function! svgpreview#Preview()
   let l:current_file = expand('%:p')
   if l:current_file =~ '\.svg$'
